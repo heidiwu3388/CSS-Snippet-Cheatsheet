@@ -1,0 +1,136 @@
+:root {
+    --dark: black;
+    --medium: rgb(206, 112, 249);
+    --light: white;
+}
+
+body {
+    color: var(--light);
+    background-color: var(--dark);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+
+header .page-title {
+    padding: 0;
+    font-size: 3em;
+    color: var(--medium);
+}
+
+header p {
+    padding: 10px 5%;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.card-column {
+    display: flex; /* flex setting for child to stretch */
+    flex-direction: row; /* flex setting for child to stretch */
+    width: 33%;
+    padding: 0; /* make sure no bleeding */
+    margin-top: 20px; /* leave room for header to go up */
+}
+
+.card {
+    width: 100%;
+    align-items: stretch;
+    border: 2px dotted white;
+    padding: 3%;
+    margin: 50px 3%;
+    transition: all 0.5s ease-in-out;
+    /* flex setting for the code-block to grow */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-header {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 3%;
+    color: var(--medium);
+    background-color: var(--dark);
+    font-size: 2em;
+    transition: all 0.5s ease-in-out;
+    /* move header up exceed its parent border */
+    position: relative;
+    margin: -50px 5px 0% 5px;
+}
+
+.card:hover,
+.card:hover .card-header {
+    box-shadow: 
+        inset 0px 0px 15px rgba(232, 102, 236, 1),
+        0px 0px 25px rgba(232, 102, 236, 1);
+}
+.card-body {
+    color: var(--medium);
+    font-size: 1.3em;
+}
+
+.code-block {
+    background-image: linear-gradient(
+        rgb(206 112 249 / 20%) 0%,
+        rgb(206 112 249 / 80%) 100%);
+    padding: 5%;
+    border-radius: 10px;
+    /* let it grow for the rest of the availiable space */
+    flex-grow: 1;
+    /* align code in the center vertically */
+    display: flex;
+    align-items: center;
+}
+
+code {
+    font-size: 1.3em;
+}
+
+/* for all list inside the code-block, */
+/* no bullet */
+.code-block ul {
+    list-style: none;
+}
+
+/* for the first level list (ul) only, */
+/* no padding on the left */
+.code-block > ul {
+    padding-left: 0%;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+
+
+/* Tablets - 2 columns */
+@media screen and (max-width: 992px) {
+    .card-column {
+        width: 50%;
+    }
+}
+
+/* Smartphones - 1 column */
+@media screen and (max-width: 768px) {
+    .card-column {
+        width: 100%;
+    }
+}
+
+*/
